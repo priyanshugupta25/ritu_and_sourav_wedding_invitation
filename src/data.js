@@ -6,7 +6,7 @@ import weddingMusic from '../audio/Siya Ke Ram - Mangal Bhavan Amangal Haari - I
 import mehendiImage from '../images/mehendi.jpg';
 import sangeetImage from '../images/sangeet.jpg';
 import scratchLogo from '../images/Scratchlogo.png';
-import shubhVivahImage from '../images/shubhvivah.png';
+import shubhVivahImage from '../images/Shubhvivah.png';
 import img1 from '../images/img1.jpg';
 import img2 from '../images/img2.jpeg';
 import img3 from '../images/img3.jpeg';
