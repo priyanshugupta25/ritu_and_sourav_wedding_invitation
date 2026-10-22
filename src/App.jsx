@@ -194,15 +194,15 @@ function HeroSection() {
     <section className="hero-section" id="home">
       <span className="hero-ornament hero-ornament-left" aria-hidden="true">✿</span>
       <span className="hero-ornament hero-ornament-right" aria-hidden="true">❀</span>
-      <p className="section-kicker">Together with their families</p>
+      <p className="section-kicker"><b>Together with their families</b></p>
       <p className="hero-hindi hindi">दो दिल, एक खूबसूरत शुरुआत</p>
-      <h2 className="hero-names"><span>Ritu Raj</span><span className="hero-ampersand">&amp;</span><span>Sourav Kumar</span></h2>
+      <h2 className="hero-names"><span><b>Ritu Raj</b></span><span className="hero-ampersand"><b>&amp;</b></span><span><b>Sourav Kumar</b></span></h2>
       <span className="ornamental-divider" aria-hidden="true">✦</span>
       <p className="hero-copy">Joyfully invite you to celebrate the beginning of their forever.</p>
       <p className="hero-copy hindi">इस शुभ अवसर पर आपकी उपस्थिति हमारे लिए सौभाग्य होगी।</p>
       <div className="hero-date">
         <span />
-        <div><small>Save the date</small><strong>20 November 2026</strong><span className="hindi">शुक्रवार, 20 नवम्बर 2026</span></div>
+        <div><small>Save the date</small><strong>20 November 2026</strong><span className="hindi"><b>शुक्रवार, 20 नवम्बर 2026</b></span></div>
         <span />
       </div>
       <a className="scroll-cue" href="#couple"><span aria-hidden="true">↓</span>Scroll to explore</a>
