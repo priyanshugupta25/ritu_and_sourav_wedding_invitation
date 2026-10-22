@@ -973,6 +973,17 @@ img {
   transition: opacity 400ms ease;
 }
 
+.scratch-hand-cue {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  width: 126px;
+  height: 126px;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
 .scratch-card.is-revealed canvas {
   opacity: 0;
   pointer-events: none;
@@ -1715,5 +1726,9 @@ img {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .scratch-hand-cue {
+    display: none;
   }
 }

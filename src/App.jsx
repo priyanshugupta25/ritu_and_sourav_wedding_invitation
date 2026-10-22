@@ -3,6 +3,7 @@ import {
   brideImage,
   frontLogo,
   groomImage,
+  handScratchAnimation,
   haldiImage,
   img1,
   img2,
@@ -298,6 +299,7 @@ function getTimeRemaining() {
 function ScratchCard({ onComplete }) {
   const canvasRef = useRef(null);
   const [revealed, setRevealed] = useState(false);
+  const [scratchStarted, setScratchStarted] = useState(false);
   const [surfaceReady, setSurfaceReady] = useState(false);
   const [surfaceError, setSurfaceError] = useState(false);
   const revealedRef = useRef(false);
@@ -326,6 +328,7 @@ function ScratchCard({ onComplete }) {
       if (logo.complete && logo.naturalWidth > 0) {
         const logoWidth = Math.min(width * 0.76, 340);
         const logoHeight = logoWidth * logo.height / logo.width;
+        context.globalAlpha = 0.55;
         context.drawImage(
           logo,
           (width - logoWidth) / 2,
@@ -333,6 +336,7 @@ function ScratchCard({ onComplete }) {
           logoWidth,
           logoHeight,
         );
+        context.globalAlpha = 1;
       }
       context.globalCompositeOperation = 'destination-out';
     };
@@ -370,6 +374,7 @@ function ScratchCard({ onComplete }) {
     function start(event) {
       if (!logo.complete || logo.naturalWidth === 0) return;
       isScratching = true;
+      setScratchStarted(true);
       canvas.setPointerCapture(event.pointerId);
       const bounds = canvas.getBoundingClientRect();
       context.beginPath();
@@ -434,6 +439,9 @@ function ScratchCard({ onComplete }) {
             className={surfaceReady ? 'is-ready' : ''}
             aria-label={surfaceReady ? 'Scratch the wine-colored card to reveal the wedding date' : 'Loading scratch card'}
           />
+        )}
+        {surfaceReady && !scratchStarted && !revealed && (
+          <img className="scratch-hand-cue" src={handScratchAnimation} alt="" aria-hidden="true" />
         )}
       </div>
       <p className={`scratch-instruction${surfaceError ? ' is-error' : ''}`} aria-live="polite">

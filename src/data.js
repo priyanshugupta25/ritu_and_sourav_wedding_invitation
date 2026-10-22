@@ -1,6 +1,7 @@
 import brideImage from '../images/bride.jpg';
 import frontLogo from '../images/frontlogo.png';
 import groomImage from '../images/groom.jpg';
+import handScratchAnimation from '../images/Hand scratch card.svg';
 import haldiImage from '../images/haldi.jpg';
 import weddingMusic from '../audio/Siya Ke Ram - Mangal Bhavan Amangal Haari - II FunsRockieByMu II.mp3';
 import mehendiImage from '../images/mehendi.jpg';
@@ -17,6 +18,7 @@ export {
   brideImage,
   frontLogo,
   groomImage,
+  handScratchAnimation,
   haldiImage,
   img1,
   img2,
