@@ -610,7 +610,7 @@ img {
 .hero-section::after {
   width: min(68vw, 660px);
   border-style: dashed;
-  opacity: -1;
+  opacity: -1.5;
 }
 
 .hero-section > :not(.hero-ornament) {
