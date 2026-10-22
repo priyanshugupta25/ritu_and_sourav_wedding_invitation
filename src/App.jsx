@@ -481,7 +481,7 @@ function EventSection() {
 function calendarUrl(event) {
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: `${event.title} - Sourav & Ritu`,
+    text: `${event.title} - Ritu & Sourav`,
     dates: `${event.start}/${event.end}`,
     details: event.quote,
     location: venueAddress,

@@ -610,7 +610,7 @@ img {
 .hero-section::after {
   width: min(68vw, 660px);
   border-style: dashed;
-  opacity: 0.6;
+  opacity: -1;
 }
 
 .hero-section > :not(.hero-ornament) {
@@ -919,10 +919,10 @@ img {
   margin-top: 32px;
   padding: 10px;
   overflow: hidden;
-  border: 1px solid var(--wine-dark);
+  border: 1px solid #bd9650;
   border-radius: 20px;
-  background: linear-gradient(135deg, #8d2944, var(--wine) 52%, var(--wine-dark));
-  box-shadow: 0 22px 55px #4a281d24, inset 0 0 0 3px #76213a;
+  background: linear-gradient(135deg, #f8e7bf, #fffaf0 28%, #d9b66e 52%, #fff6df 74%, #b88b3f);
+  box-shadow: 0 22px 55px #4a281d24, inset 0 0 0 3px #fff8e8;
 }
 
 .scratch-reveal-content {
@@ -932,10 +932,10 @@ img {
   align-content: center;
   justify-items: center;
   gap: 12px;
-  border: 1px solid #d7a9b7;
+  border: 1px solid #d4b56f;
   border-radius: 14px;
   background: radial-gradient(circle at top, #fffdf8, #f8ead8 78%, #f2dfc4);
-  box-shadow: inset 0 0 0 5px #fff8ed, inset 0 0 0 6px #d7a9b7;
+  box-shadow: inset 0 0 0 5px #fff8ed, inset 0 0 0 6px #e2c88f;
   color: #672034;
 }
 
@@ -973,11 +973,6 @@ img {
   transition: opacity 400ms ease;
 }
 
-.scratch-card canvas:not(.is-ready) {
-  cursor: wait;
-  pointer-events: none;
-}
-
 .scratch-card.is-revealed canvas {
   opacity: 0;
   pointer-events: none;
@@ -989,8 +984,18 @@ img {
   font-size: 13px;
 }
 
-.scratch-instruction.is-error {
-  color: #a31d35;
+.text-button {
+  margin-top: 12px;
+  padding: 8px;
+  border: 0;
+  color: var(--wine);
+  background: transparent;
+  cursor: pointer;
+  font: 700 10px/1.5 Arial, sans-serif;
+  letter-spacing: 1px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-transform: uppercase;
 }
 
 .events-section {
