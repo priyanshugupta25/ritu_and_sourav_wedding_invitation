@@ -125,7 +125,7 @@ img {
 }
 
 .section-kicker {
-  color: #98753e;
+  color: #4d392d;
   font: 700 10px/1.5 Arial, sans-serif;
   letter-spacing: 2.8px;
   text-transform: uppercase;
@@ -523,7 +523,7 @@ img {
 
 .brand-monogram {
   grid-row: span 2;
-  color: var(--gold);
+  color: var(--wine-dark);
   font-size: 28px;
   font-weight: 600;
   letter-spacing: -2px;
@@ -592,7 +592,7 @@ img {
   text-align: center;
 }
 
-.hero-section::before,
+/* .hero-section::before,
 .hero-section::after {
   position: absolute;
   z-index: -1;
@@ -611,7 +611,7 @@ img {
   width: min(68vw, 660px);
   border-style: dashed;
   opacity: -1.5;
-}
+} */
 
 .hero-section > :not(.hero-ornament) {
   position: relative;
@@ -628,7 +628,7 @@ img {
   display: grid;
   justify-items: center;
   margin: 0;
-  color: #433329;
+  color: var(--wine-dark);
   font-size: clamp(42px, 6.4vw, 70px);
   font-weight: 500;
   line-height: 0.95;
@@ -636,7 +636,7 @@ img {
 
 .hero-ampersand {
   margin: 4px 0;
-  color: #c0a162;
+  color: #4b3529;
   font-size: 0.48em;
   line-height: 1;
 }
@@ -702,7 +702,7 @@ img {
 }
 
 .hero-date strong {
-  color: #4d3a2c;
+  color: var(--wine-dark);
   font-size: 25px;
 }
 
