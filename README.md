@@ -1,6 +1,6 @@
 # Ritu Raj & Sourav Kumar — Interactive Wedding Invitation
 
-A responsive React + Vite project wrapping the invitation page in `public/invitation.html` to preserve the envelope animation, confetti, floating hearts and sparkles, Ganesh Ji artwork, scratch-to-reveal date card, event cards, gallery, and other interactions.
+A responsive React + Vite wedding invitation. The cover, page sections, gallery, RSVP dialog, countdown, and scratch-to-reveal date card are rendered by React components.
 
 ## Run on Windows
 
@@ -35,28 +35,26 @@ The production website is generated in `dist/`.
 
 ## Customize before sharing
 
-The invitation's visual markup, text, CSS and browser interactions are in `public/invitation.html`.
+The invitation is implemented in `src/App.jsx` and styled in `src/styles.css`. Wedding details and event data are in `src/data.js`.
 
-Search that file for the following values and update them when confirmed:
+Update these values in the source when details are confirmed:
 
-- `RITU RAJ` and `SOURAV KUMAR` — couple names.
-- `20 November 2026`, `20 NOVEMBER 2026`, and the countdown's `2026-11-20T00:00:00+05:30` — date and time.
-- `Venue details coming soon` — actual venue name/address.
-- The `mapsBtn` handler — use the confirmed venue address in its Google Maps URL.
-- The `rsvpForm` submit handler — configure the family's WhatsApp number before sending real RSVP messages.
-- Event cards — replace draft dates/times with the family's confirmed schedule.
-- Image URLs — the page tries the original reference site's image paths first and uses embedded/fallback artwork if those files cannot be loaded. Replace them with the couple's approved photos for the final version.
+- `src/App.jsx` — couple names, invitation copy, audio playback, and event descriptions.
+- `src/data.js` — event schedule, wedding date, venue address, and imported assets.
+- `src/styles.css` — layout, spacing, typography, and responsive styling.
 
 ### Important configuration notes
 
-- Google Maps is not configured until you add the confirmed venue address.
-- The current RSVP form shows a setup message; it does not send a WhatsApp RSVP until you add the correct family number and URL handling.
-- The music control currently plays a synthesized demo. Add an audio file you have permission to use if you want a song.
-- The standalone HTML file is included at the project root as `Ritu-Sourav-Wedding-Invitation-Standalone.html` for quick local opening. For the Vite version, run the commands above.
+- Google Maps directions use the venue address in `src/data.js`.
+- Background music uses the MP3 in `audio/` and attempts to autoplay. Browsers that block audible autoplay start playback when the guest opens the invitation or presses the music button.
+- All invitation photos are imported from `images/` and bundled by Vite.
 
 ## Files
 
 - `index.html` — Vite entry point.
-- `src/` — React application and shell styling.
-- `public/invitation.html` — full invitation design and interaction code.
-- `Ritu-Sourav-Wedding-Invitation-Standalone.html` — standalone copy of the invitation.
+- `src/main.jsx` — React application entry point.
+- `src/App.jsx` — invitation sections, interactions, dialogs, and shared layout.
+- `src/data.js` — wedding content, event data, and image imports.
+- `src/styles.css` — responsive component styles.
+- `audio/` — bundled background music.
+- `images/` — locally bundled invitation and event photography.
