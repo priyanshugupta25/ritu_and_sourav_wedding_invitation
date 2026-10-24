@@ -732,6 +732,68 @@ img {
   font-size: 14px;
 }
 
+.scroll-indicator {
+  position: fixed;
+  z-index: 15;
+  top: 50%;
+  right: clamp(12px, 2vw, 28px);
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  padding: 12px 9px;
+  border: 1px solid #c7ad7c;
+  border-radius: 999px;
+  color: #806b4e;
+  background: rgb(255 250 244 / 88%);
+  box-shadow: 0 5px 18px rgb(74 43 24 / 10%);
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background 180ms ease, box-shadow 180ms ease;
+}
+
+.scroll-indicator:hover {
+  background: #fffaf0;
+  box-shadow: 0 7px 22px rgb(74 43 24 / 16%);
+}
+
+.scroll-indicator-label {
+  font: 700 8px/1 Arial, sans-serif;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+}
+
+.scroll-indicator-arrows {
+  display: grid;
+  color: var(--wine);
+  font: 700 19px/0.65 Arial, sans-serif;
+}
+
+.scroll-indicator-arrows span {
+  animation: scroll-arrow-down 1.2s ease-in-out infinite;
+}
+
+.scroll-indicator-arrows span:nth-child(2) {
+  animation-delay: 140ms;
+}
+
+.scroll-indicator-arrows span:nth-child(3) {
+  animation-delay: 280ms;
+}
+
+@keyframes scroll-arrow-down {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: translateY(-3px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(3px);
+  }
+}
+
 .hero-ornament {
   position: absolute;
   z-index: 0;
@@ -1540,6 +1602,17 @@ img {
 }
 
 @media (max-width: 540px) {
+  .scroll-indicator {
+    right: 8px;
+    gap: 6px;
+    padding: 9px 7px;
+  }
+
+  .scroll-indicator-label {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+
   .page-section {
     padding: 58px 18px;
   }

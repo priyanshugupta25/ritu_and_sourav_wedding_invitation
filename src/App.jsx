@@ -211,6 +211,43 @@ function HeroSection() {
   );
 }
 
+function ScrollIndicator({ refreshKey }) {
+  const [atPageEnd, setAtPageEnd] = useState(false);
+
+  useEffect(() => {
+    function updatePageEnd() {
+      const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+      setAtPageEnd(scrollTop + clientHeight >= scrollHeight - 40);
+    }
+
+    updatePageEnd();
+    window.addEventListener('scroll', updatePageEnd, { passive: true });
+    window.addEventListener('resize', updatePageEnd);
+    return () => {
+      window.removeEventListener('scroll', updatePageEnd);
+      window.removeEventListener('resize', updatePageEnd);
+    };
+  }, [refreshKey]);
+
+  if (atPageEnd) return null;
+
+  return (
+    <button
+      className="scroll-indicator"
+      type="button"
+      aria-label="Scroll down to see more"
+      onClick={() => window.scrollBy({ top: window.innerHeight * 0.72, behavior: 'smooth' })}
+    >
+      <span className="scroll-indicator-label">Scroll for more</span>
+      <span className="scroll-indicator-arrows" aria-hidden="true">
+        <span>⌄</span>
+        <span>⌄</span>
+        <span>⌄</span>
+      </span>
+    </button>
+  );
+}
+
 function CoupleSection() {
   const people = [
     {
@@ -801,6 +838,7 @@ export default function App() {
       <FloatingPetals />
       {coverVisible && <InvitationCover onOpen={() => setCoverVisible(false)} onStartMusic={startMusic} />}
       <SiteHeader musicOn={musicOn} onToggleMusic={toggleMusic} />
+      {!coverVisible && photoIndex === null && <ScrollIndicator refreshKey={scratchComplete} />}
       <main>
         <HeroSection />
         <CoupleSection />
